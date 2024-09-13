@@ -143,50 +143,63 @@
       }
     }
   }
- .footer {
-  background: rgba(18, 18, 18, 0.09);
-  padding: 1rem;
-  display: flex;
-  
+  .footer {
+    background: rgba(18, 18, 18, 0.09);
+    padding: 1rem;
 
-  &__top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 10rem;
-
-    &--round {
-      background-color: #E86A33;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
+    &__top {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 1rem;
-      color: #fff;
-  }
+      margin-right: 12rem;
+      margin-bottom: 3rem;
 
-  &--square {
-      background-color: #E86A33;
-      width: 3rem;
-      height: 3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 1rem;
-      color: #fff;
-      border-radius: 0.8rem;
-  }
+      &--round,
+      &--square {
+        background-color: #e86a33;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        margin-right: 1rem;
+      }
 
-  &--btn {
-      background-color: #E86A33;
-      border-radius: 50px; /* Creates the oval shape */
-      padding: 0.5rem 2rem; /* Adjust padding for the oval look */
-      text-transform: none; /* Optional: Disable uppercase text */
+      &--round {
+        border-radius: 50%;
+      }
+      &--btn {
+        background-color: #e86a33;
+        border-radius: 50px;
+        padding: 0.5rem 2rem;
+        text-transform: none;
+      }
     }
-  
-}
 
-}
+    &__bottom {
+      margin: 3rem 0;
+
+      &--logo{
+        margin-bottom: 1rem;
+      }
+
+      &--heading {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      &--links{
+        color: gray;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+    }
+
+    &__copy {
+      display: flex;
+      justify-content:center;
+      color: rgb(74, 72, 72);
+      font-size: 0.8rem;
+      font-weight: bolder;
+    }
+  }
 }
