@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { Link } from "react-router-dom";
@@ -8,8 +8,13 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import PinDropRoundedIcon from "@mui/icons-material/PinDropRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import Register from "../Components/Register/Register";
+import ContactPopup from "../Components/Contact/ContactPopup";
 
 const Landing = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <Box className="landing">
       <Box className="header">
@@ -68,10 +73,11 @@ const Landing = () => {
               className="header__log--btn"
               variant="contained"
               component={Link}
-              to="/register"
+              to="/contact"
+              target="_blank"
               color="inherit"
             >
-              Sign Up
+              contact Us
             </Button>
             <Button
               className="header__log--btn"
@@ -230,9 +236,14 @@ const Landing = () => {
             </Grid>
           </Grid>
           <Grid xs={4} className="footer__top">
-            <Button className="footer__top--btn" variant="contained">
+            <Button
+              className="footer__top--btn"
+              variant="contained"
+              onClick={handleOpen}
+            >
               Get In Touch
             </Button>
+            <ContactPopup open={open} handleClose={handleClose} />
           </Grid>
         </Grid>
 
