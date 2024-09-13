@@ -4,13 +4,10 @@ import Grid from "@mui/material/Grid2";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.scss";
 import Logo from "../assets/imgs/logo.png";
-import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
-import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
-import Groups3RoundedIcon from "@mui/icons-material/Groups3Rounded";
-import Diversity1RoundedIcon from "@mui/icons-material/Diversity1Rounded";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import PinDropRoundedIcon from "@mui/icons-material/PinDropRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+import Register from "../Components/Register/Register";
 
 const Landing = () => {
   return (
@@ -114,112 +111,7 @@ const Landing = () => {
       <Typography variant="h6" className="title">
         Join us
       </Typography>
-      <Box className="join">
-        <Grid container spacing={2} columns={12} className="join__content">
-          <Grid className="join__content--box" xs={4}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-              className="icons"
-            >
-              <Box
-                sx={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 1,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#13763A", // Optional background color
-                }}
-              >
-                <VolunteerActivismRoundedIcon />
-              </Box>
-              <Box>
-                <ArrowOutwardRoundedIcon />
-              </Box>
-            </Box>
-            <Typography style={{ paddingBottom: "2rem" }} variant="h6">
-              Become A Volunteer
-            </Typography>
-            <Typography style={{ paddingBottom: "2rem" }} variant="body2">
-              Become a volunteer and start contributing your time and skills to
-              meaningful causes
-            </Typography>
-          </Grid>
-
-          <Grid className="join__content--box" xs={4}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-              className="icons"
-            >
-              <Box
-                sx={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 1,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#B16E09",
-                }}
-              >
-                <Groups3RoundedIcon />
-              </Box>
-              <Box>
-                <ArrowOutwardRoundedIcon />
-              </Box>
-            </Box>
-            <Typography style={{ paddingBottom: "2rem" }} variant="h6">
-              NonProfit organization
-            </Typography>
-            <Typography style={{ paddingBottom: "2rem" }} variant="body2">
-              Empower Your Mission with Our Volunteer Management System
-            </Typography>
-          </Grid>
-
-          <Grid className="join__content--box" xs={4}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-              className="icons"
-            >
-              <Box
-                sx={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 1,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#5E5AFF",
-                }}
-              >
-                <Diversity1RoundedIcon />
-              </Box>
-              <Box>
-                <ArrowOutwardRoundedIcon />
-              </Box>
-            </Box>
-            <Typography style={{ paddingBottom: "2rem" }} variant="h6">
-              Community Group
-            </Typography>
-            <Typography style={{ paddingBottom: "2rem" }} variant="body2">
-              Strengthen Your Community with Seamless Volunteer Coordination!
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
+      <Register />
 
       <Box className="faqs">
         <Box className="faqs__all">
@@ -402,7 +294,7 @@ const Landing = () => {
           </Grid>
           <Grid size={2} className="footer__bottom">
             <Typography variant="h6" className="footer__bottom--heading">
-                Support
+              Support
             </Typography>
             <Typography variant="body2" className="footer__bottom--links">
               FAQs
@@ -442,7 +334,7 @@ const Landing = () => {
         <Box className="footer__copy">
           <Typography variant="body2">
             &copy; 2021 VMS. All Rights Reserved. Terms and Conditions
-          </Typography> 
+          </Typography>
         </Box>
       </Box>
     </Box>
