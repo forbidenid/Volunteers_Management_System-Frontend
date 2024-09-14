@@ -1,4 +1,8 @@
-Certainly! Here’s a complete `README.md` file that refers to npm instead of Yarn:
+
+## Ownership
+
+This Repository belongs to [Dennis Muriithi](ctrl1root@gmail.com) and [Faith Kitone](vaati.faith79@gmail.com)
+
 
 ```markdown
 # Volunteers Management System (VMS) Frontend
@@ -59,7 +63,7 @@ If you'd like to contribute to this project, please fork the repository and subm
 
 ## Contact
 
-For any questions or issues, please contact [Faith Kitone](vaati.faith79@gmail.com).
+For any questions or issues, please contact [Faith Kitone](vaati.faith79@gmail.com) and [Dennis Muriithi](ctrl1root@gmail.com)
 
 Happy coding!
 
