@@ -12,7 +12,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 
-    IMAGES_LOCATION = os.path.join(basedir, 'static', 'images')
+    IMAGES_LOCATION = os.path.join(basedir, 'static', 'img')
     # Flask Jwt extended
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET', 'JWT_SUPER_SECRET')
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(10 ** 6)
