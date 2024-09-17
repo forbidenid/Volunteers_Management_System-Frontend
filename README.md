@@ -1,7 +1,11 @@
 
 # Volunteer Management System
-
 Organize and manage volunteer opportunities with ease.
+
+Welcome to the Volunteer Management System! 🌟 This project is designed to simplify the process of managing volunteers and their activities, making it easier for organizations to connect with and coordinate their volunteers.
+🌟 The Inspiration
+
+The inspiration for this project came from experiences of volunteering and working with non-profit organizations. It was cumbersome and inefficient how volunteer management could be. The goal was to create a system that would streamline the process, making it as intuitive and efficient as possible.
 
 ## Live Demo
 
@@ -29,6 +33,7 @@ Check out our live demo here: [Deployed Site](https://volunteers-management-syst
 - **API Development:** Flask-RESTful
 - **Cross-Origin Requests:** Flask-CORS
 - **Version Control:** Git, GitHub
+- **UI Components:** Material-UI (MUI)
 - **Development Environment:** Visual Studio Code
 - **Testing:** Pytest, Jest (for frontend)
 - **Documentation:** Sphinx, Markdown
