@@ -1,0 +1,122 @@
+.login {
+  height: 100vh;
+  background-image: url("../assets/imgs/login.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .textfield-input {
+    color: white;
+
+    &:focus {
+      color: #028e37;
+    }
+  }
+
+  .textfield-label {
+    color: #e86a33,;
+
+    &.Mui-focused {
+      color: #028e37; 
+    }
+  }
+  .MuiFilledInput-root {
+    background-color: rgba(
+      255,
+      255,
+      255,
+      1
+    );
+    border-bottom: 2px solid white;
+    &:hover {
+      border-bottom: 2px solid white; 
+    }
+
+    &.Mui-focused {
+      border-bottom: 2px solid #028e37;
+    }
+  }
+}
+.login {
+  height: 100vh;
+  background-image: url("../assets/imgs/login.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+
+    &--title{
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center; 
+
+      .textfield-input {
+        color: white;
+
+        &:focus {
+          color: #028e37;
+        }
+      }
+
+      .textfield-label {
+        color: white;
+
+        &.Mui-focused {
+          color: #028e37;
+        }
+      }
+
+      .MuiFilledInput-underline:before {
+        border-bottom: 2px solid white;
+      }
+
+      .MuiFilledInput-underline:hover:before {
+        border-bottom: 2px solid white;
+      }
+
+      .MuiFilledInput-underline:after {
+        border-bottom: 2px solid #028e37;
+      }
+    }
+    &--button {
+         background-color: #e86a33;
+        width: 80%;
+        color: white;
+        text-align: center;
+        &:hover {
+          background-color: darken(#e86a33, 10%);
+        }
+      }
+  }
+}
