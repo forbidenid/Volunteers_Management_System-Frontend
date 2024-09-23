@@ -24,7 +24,6 @@ const columns = [
   { id: "actions", label: "Actions", minWidth: 170, align: "center" },
 ];
 
-// Array of dummy names
 const dummyNames = [
   "USIU",
   "Tech University",

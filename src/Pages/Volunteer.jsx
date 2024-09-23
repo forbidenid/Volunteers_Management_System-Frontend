@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Box, Button, Divider, Typography } from "@mui/material";
 import FemaleUser from "../assets/imgs/female-user.png";
 import "../Styles/Volunteer.scss";
@@ -6,20 +7,37 @@ import PersonIcon from "@mui/icons-material/Person";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import VolunteersTable from "../Components/Volunteers/VolunteersTable";
+import UpdateVolunteerPopup from "../Components/Volunteers/UpdateVolunteerPopup";
 
 export default function Volunteer() {
+
+  const [popupOpen, setPopupOpen] = useState(false);
+
+
+  const handleOpenPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupOpen(false);
+  };
+
   return (
     <Box className="volunteer">
       <Box className="volunteer__user">
         <Box className="volunteer__user--left">
-          <figure class="shape">
-            <img src={FemaleUser} alt="Person on a tour" class="img" />
-            <figcaption class="caption">Jane Doe</figcaption>
+          <figure className="shape">
+            <img src={FemaleUser} alt="Person on a tour" className="img" />
+            <figcaption className="caption">Jane Doe</figcaption>
           </figure>
           <Typography variant="h4">Jane Doe</Typography>
         </Box>
         <Box className="volunteer__user--right">
-          <Button variant="contained" className="button">
+          <Button
+            variant="contained"
+            className="button"
+            onClick={handleOpenPopup}
+          >
             Edit Profile
           </Button>
         </Box>
@@ -106,10 +124,7 @@ export default function Volunteer() {
         </Box>
         <Box className="volunteer__events--toggle">
           {["Upcoming", "Past", "Pending", "Cancelled", "All"].map((text) => (
-            <Typography
-              variant="h6"
-              key={text}
-            >
+            <Typography variant="h6" key={text}>
               {text}
             </Typography>
           ))}
@@ -118,6 +133,8 @@ export default function Volunteer() {
           <VolunteersTable />
         </Box>
       </Box>
+
+      <UpdateVolunteerPopup open={popupOpen} handleClose={handleClosePopup} />
     </Box>
   );
 }
