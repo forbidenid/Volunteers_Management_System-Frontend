@@ -1,0 +1,72 @@
+.login {
+  height: 100vh;
+  background-image: url("../assets/imgs/login.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+
+    &--title {
+      font-size: 2rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      .textfield{
+        margin-bottom: 2rem;
+      }
+
+      .textfield-input {
+        color: #e86a33;
+
+        &:focus {
+          color: #e86a33;
+        }
+      }
+
+      .textfield-label {
+        color: black;
+
+        &.Mui-focused {
+          color: #e86a33;
+        }
+      }
+
+      .MuiFilledInput-underline:before {
+        border-bottom: 2px solid rgb(160, 155, 155);
+      }
+
+      .MuiFilledInput-underline:hover:before {
+        border-bottom: 2px solid rgb(160, 155, 155);
+      }
+
+      .MuiFilledInput-underline:after {
+        border-bottom: 2px solid #e86a33;
+      }
+    }
+    &--button {
+      width: 80%;
+      color: white;
+      text-align: center;
+
+      &:hover {
+        background-color: darken(#e86a33, 10%);
+      }
+
+      
+    }
+  }
+}

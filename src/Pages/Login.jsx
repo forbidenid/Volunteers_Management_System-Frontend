@@ -1,69 +1,42 @@
 import React from "react";
-import { Box, Typography, TextField, Button } from "@mui/material";
-import loginImage from "../assets/imgs/login.jpg";
+import { Box, Button, Card, TextField, Typography } from "@mui/material";
+import "../Styles/Login.scss";
 
 const Login = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "100vh",
-        backgroundImage: `url(${loginImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        textAlign: "center",
-      }}
-    >
-      <Typography
-        variant="h4"
-        component="h1"
-        gutterBottom
-        sx={{ color: "white" }}
-      >
-        Login
-      </Typography>
-      <TextField
-        label="Username"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        sx={{
-          input: { color: "white" }, 
-          label: { color: "white" }, 
-          bgcolor: "rgba(255, 255, 255, 0.2)", 
-        }}
-      />
-      <TextField
-        label="Password"
-        type="password"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        sx={{
-          input: { color: "white" },
-          label: { color: "white" },
-          bgcolor: "rgba(255, 255, 255, 0.2)",
-        }}
-      />
-      <Button
-        variant="contained"
-        fullWidth
-        sx={{
-          mt: 2,
-          bgcolor: "#E86A33",
-          "&:hover": {
-            bgcolor: "#d55a2f", 
-          },
-        }}
-      >
-        Login
-      </Button>
+    <Box className="login">
+      <Card className="login__card">
+        <Typography variant="h4" className="login__card--title">
+          Login
+        </Typography>
+        <Box className="login__card--form">
+          <TextField
+            className="textfield"
+            id="filled-basic"
+            label="Email"
+            variant="filled"
+            InputProps={{ className: "textfield-input" }}
+            InputLabelProps={{ className: "textfield-label" }}
+          />
+          <TextField
+            InputProps={{ className: "textfield-input" }}
+            InputLabelProps={{ className: "textfield-label" }}
+            className="textfield"
+            id="filled-basic"
+            label="Password"
+            variant="filled"
+          />
+          <Button
+            variant="contained"
+            className="login__card--button"
+            sx={{ backgroundColor: "#e86a33"}}
+          >
+            Login
+          </Button>
+        </Box>
+      </Card>
     </Box>
   );
 };
 
 export default Login;
-
