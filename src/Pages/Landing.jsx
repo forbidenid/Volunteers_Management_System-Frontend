@@ -37,7 +37,7 @@ const Landing = () => {
             <Button
               className="header__menu--btn"
               component={Link}
-              to="/home"
+              to="/"
               color="inherit"
             >
               Home
@@ -45,7 +45,7 @@ const Landing = () => {
             <Button
               className="header__menu--btn"
               component={Link}
-              to="/about"
+              to="/error"
               color="inherit"
             >
               About
@@ -53,7 +53,7 @@ const Landing = () => {
             <Button
               className="header__menu--btn"
               component={Link}
-              to="/services"
+              to="/error"
               color="inherit"
             >
               Our Stories
@@ -61,7 +61,7 @@ const Landing = () => {
             <Button
               className="header__menu--btn"
               component={Link}
-              to="/services"
+              to="/error"
               color="inherit"
             >
               Our Program

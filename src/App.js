@@ -4,6 +4,7 @@ import Landing from "../src/Pages/Landing";
 import ContactUs from "./Components/Contact/ContactUs";
 import Login from "./Pages/Login";
 import Volunteer from "./Pages/Volunteer";
+import ErrorPage from "./Pages/ErrorPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/volunteer" element={<Volunteer />} />
+        <Route path="/error" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
