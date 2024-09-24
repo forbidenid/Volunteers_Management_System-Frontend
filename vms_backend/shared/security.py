@@ -1,6 +1,6 @@
 from flask import jsonify
 
-from ecommerce_api.factory import jwt
+from api.factory import jwt
 from users.models import User
 
 
