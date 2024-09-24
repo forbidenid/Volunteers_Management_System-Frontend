@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, TextField, Button, Container } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -33,8 +34,25 @@ const ContactUs = () => {
           bgcolor: "background.paper",
           borderRadius: 2,
           boxShadow: 3,
+          position: "relative",
         }}
       >
+        <Box>
+          <Typography
+            variant="body2"
+            component={Link}
+            to="/"
+            sx={{
+              color: "#e86a33",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              textDecoration: "none",
+            }}
+          >
+            Back Home
+          </Typography>
+        </Box>
         <Typography variant="h4" component="h1" gutterBottom>
           Contact Us
         </Typography>
