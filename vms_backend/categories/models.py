@@ -3,7 +3,7 @@ from datetime import datetime
 from slugify import slugify
 from sqlalchemy import event
 
-from api.factory import db
+from vms_api.factory import db
 
 
 class Category(db.Model):
@@ -33,7 +33,7 @@ def receive_set(target, value, oldvalue, initiator):
     target.slug = slugify(unicode(value))
 
 
-products_categories = \
+gigs_categories = \
     db.Table("gigs_categories",
              db.Column("category_id", db.Integer, db.ForeignKey("categories.id")),
              db.Column("gig_id", db.Integer, db.ForeignKey("gigs.id")))

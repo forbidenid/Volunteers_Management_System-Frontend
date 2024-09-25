@@ -1,2 +1,2 @@
-import middlewares
+import shared.middlewares
 import shared.security

@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 
 from categories.models import Category
 from categories.serializers import CategoryListSerializer
-from api.factory import db, app
+from vms_api.factory import db, app
 from file_uploads.models import CategoryImage
 from routes import blueprint
 from shared.serializers import get_success_response, get_error_response

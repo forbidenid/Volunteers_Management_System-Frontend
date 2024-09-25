@@ -1,9 +1,8 @@
 from categories.models import Category
 from comments.models import Comment
-from api.factory import app, db
+from vms_api.factory import app, db
 from file_uploads.models import FileUpload, GigImage, TagImage, CategoryImage
-from orders.models import Order
-from gigs.models import Product
+from gigs.models import Gig
 from routes import blueprint
 from tags.models import Tag
 from users.models import User

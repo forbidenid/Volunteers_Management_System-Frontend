@@ -1,8 +1,8 @@
 from flask import request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_claims, current_user
+from flask_jwt_extended import jwt_required, get_jwt_header, current_user
 from sqlalchemy import desc
 
-from ecommerce_api.factory import db
+from vms_api.factory import db
 from gigs.models import Gig
 from comments.models import Comment
 from comments.serializers import CommentListSerializer, CommentDetailsSerializer
