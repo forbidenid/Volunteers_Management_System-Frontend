@@ -5,7 +5,7 @@ from flask_jwt_extended import jwt_required, current_user
 from sqlalchemy import desc
 from werkzeug.utils import secure_filename
 
-from api.factory import db, app
+from vms_api.factory import db, app
 from file_uploads.models import TagImage
 from routes import blueprint
 from shared.serializers import get_success_response, get_error_response

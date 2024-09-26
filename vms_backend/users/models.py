@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from api.factory import db, bcrypt
+from vms_api.factory import db, bcrypt
 from roles.models import users_roles
 
 

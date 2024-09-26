@@ -3,7 +3,7 @@ from datetime import datetime
 from slugify import slugify
 from sqlalchemy import event, Column, Integer, ForeignKey, UniqueConstraint
 
-from api.factory import db
+from vms_api.factory import db
 
 
 class Tag(db.Model):

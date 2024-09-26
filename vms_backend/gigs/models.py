@@ -5,12 +5,12 @@ from slugify import slugify
 from sqlalchemy import event
 from sqlalchemy.orm import relationship
 
-from ecommerce_api.factory import db
-from categories.models import products_categories
-from tags.models import products_tags
+from vms_api.factory import db
+from categories.models import gigs_categories
+from tags.models import gigs_tags
 
 
-class Product(db.Model):
+class Gig(db.Model):
     __tablename__ = 'gigs'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -24,16 +24,16 @@ class Product(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
     publish_on = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-    tags = relationship('Tag', secondary=products_tags, backref='products')
-    categories = relationship('Category', secondary=products_categories, backref='products')
+    tags = relationship('Tag', secondary=gigs_tags, backref='gigs')
+    categories = relationship('Category', secondary=gigs_categories, backref='gigs')
 
-    comments = relationship('Comment', backref='product', lazy='dynamic')
+    comments = relationship('Comment', backref='gig', lazy='dynamic')
 
     def __repr__(self):
-        return '<Product %r>' % self.name
+        return '<Gig %r>' % self.name
 
     def __str__(self):
-        return '<Product {}>'.format(self.name)
+        return '<Gig {}>'.format(self.name)
 
     def get_summary(self):
         return {
@@ -47,6 +47,6 @@ class Product(db.Model):
         }
 
 
-@event.listens_for(Product.name, 'set')
+@event.listens_for(Gig.name, 'set')
 def receive_set(target, value, oldvalue, initiator):
     target.slug = slugify(unicode(value))

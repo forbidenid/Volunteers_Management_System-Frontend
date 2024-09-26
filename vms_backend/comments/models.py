@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
-from api.factory import db
+from vms_api.factory import db
 
 
 class Comment(db.Model):

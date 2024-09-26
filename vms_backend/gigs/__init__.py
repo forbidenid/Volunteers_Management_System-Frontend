@@ -1,3 +1,4 @@
+import sys
 import gigs.views  
 
-sys.stdout.write('[+] Registering product routes\n')
+sys.stdout.write('[+] Registering gig routes\n')
