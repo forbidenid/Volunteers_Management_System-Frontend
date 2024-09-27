@@ -14,6 +14,7 @@ import {
   Delete as DeleteIcon,
 } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const initialEvents = [
   {
@@ -60,7 +61,6 @@ const initialEvents = [
   }
 ];
 
-// Custom button styles
 const CustomButton = styled(Button)({
   backgroundColor: "#e86a33",
   color: "#fff",
@@ -98,6 +98,7 @@ const HeaderContainer = styled("div")({
 const CommunityEventsPage = () => {
   const [events, setEvents] = useState(initialEvents);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     venue: "",
@@ -136,8 +137,26 @@ const CommunityEventsPage = () => {
     setEvents(events.filter((event) => event.id !== id));
   };
 
+    const handleBackToHome = () => {
+      navigate("/");
+    };
+
   return (
     <div style={{ padding: "20px" }}>
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: "#e86a33",
+          color: "#fff",
+          marginBottom: "20px",
+          "&:hover": {
+            backgroundColor: "#d75e2d",
+          },
+        }}
+        onClick={handleBackToHome}
+      >
+        Back to Home
+      </Button>
       <HeaderContainer>
         <Typography variant="h5" sx={{ color: "#e86a33", fontWeight: "bold" }}>
           Community Events
