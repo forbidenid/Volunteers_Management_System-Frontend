@@ -1,7 +1,7 @@
 from flask import request, jsonify
-from flask_jwt_extended import create_access_token, jwt_optional, get_jwt_identity
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
-from api.factory import db, bcrypt
+from vms_api.factory import db, bcrypt
 from roles.models import Role
 from routes import blueprint
 from shared.serializers import get_success_response
@@ -24,7 +24,7 @@ def register():
     return get_success_response('User registered successfully')
 
 
-@jwt_optional
+@jwt_required
 def partially_protected():
     # If no JWT is sent in with the request, get_jwt_identity()
     # will return None

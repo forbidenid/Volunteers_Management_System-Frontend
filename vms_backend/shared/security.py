@@ -1,6 +1,6 @@
 from flask import jsonify
 
-from api.factory import jwt
+from vms_api.factory import jwt
 from users.models import User
 
 
@@ -47,10 +47,13 @@ def invalid_token_loader(error_message):
 
 # anything this function returns will be available as current_user
 # it is called when the request is trying to reach a protected endpoint
-jwt.user_loader_callback_loader(user_loader)
+@jwt.user_lookup_loader
+def user_loader_callback(_jwt_header, jwt_data):
+    user_identity = jwt_data["sub"]
+    return User.query.filter_by(id=user_identity).one_or_none()
 
 jwt.user_identity_loader(identity_loader)
-jwt.user_claims_loader(add_claims_to_access_token)
+jwt.user_lookup_loader(add_claims_to_access_token)
 
 
 # jwt.unauthorized_loader(no_jwt_for_protected_endpoint)

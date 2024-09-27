@@ -1,21 +1,18 @@
 from categories.models import Category
 from comments.models import Comment
-from api.factory import app, db
+from vms_api.factory import app, db
 from file_uploads.models import FileUpload, GigImage, TagImage, CategoryImage
-from orders.models import Order
-from gigs.models import Product
+from gigs.models import Gig
 from routes import blueprint
 from tags.models import Tag
 from users.models import User
 
-# Extensions, it is not how a well organized project initializes the extensions but hey, it
-# is simple and readable anyways.
+
 
 
 app.register_blueprint(blueprint, url_prefix='/api')
 
 
-# Like the old school Flask-Script for the shell, but using the new Flask CLI which is way better
 @app.shell_context_processor
 def make_shell_context():
     return dict(app=app, db=db, User=User, gig=Gig,

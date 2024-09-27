@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from flask_sqlalchemy import Pagination
+from flask_sqlalchemy import pagination
 
 
 class PageSerializer(object):

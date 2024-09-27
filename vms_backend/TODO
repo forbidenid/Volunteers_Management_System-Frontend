@@ -1,9 +1,0 @@
-TODO_LIST
-
-`Flask-SQLAchlemy` # for handling database collections
-`Flask-mail` # for authentication once a user Signs up
-`Flask-RESTful` # to handle RESTful APIs
-`Flask-uploads`
-`Flask-User`
-`Flask-Login`
-`Flask-WTF`

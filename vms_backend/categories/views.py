@@ -7,13 +7,13 @@ from werkzeug.utils import secure_filename
 
 from categories.models import Category
 from categories.serializers import CategoryListSerializer
-from api.factory import db, app
+from vms_api.factory import db, app
 from file_uploads.models import CategoryImage
 from routes import blueprint
 from shared.serializers import get_success_response, get_error_response
 
 
-@blueprint.route('/categories', methods=['GET'])
+@blueprint.route('/categories', methods=['GET'], endpoint='list_categories')
 def list_categories():
     page_size = request.args.get('page_size', 5)
     page = request.args.get('page', 1)
@@ -26,7 +26,7 @@ def validate_file_upload(filename):
            filename.rsplit('.', 1)[1].lower() in ['png', 'jpeg', 'jpg']
 
 
-@blueprint.route('/categories', methods=['POST'])
+@blueprint.route('/categories', methods=['POST'], endpoint='create_category')
 @jwt_required
 def create_category():
     if current_user.is_not_admin():
@@ -42,7 +42,7 @@ def create_category():
             if image and validate_file_upload(image.filename):
                 filename = secure_filename(image.filename)
                 dir_path = app.config['IMAGES_LOCATION']
-                dir_path = os.path.join((os.path.join(dir_path, 'categories')))
+                dir_path = os.path.join(dir_path, 'categories')
 
                 if not os.path.exists(dir_path):
                     os.makedirs(dir_path)
@@ -51,10 +51,7 @@ def create_category():
                 image.save(file_path)
 
                 file_path = file_path.replace(app.config['IMAGES_LOCATION'].rsplit(os.sep, 2)[0], '')
-                if image.content_length == 0:
-                    file_size = image.content_length
-                else:
-                    file_size = os.stat(file_path).st_size
+                file_size = image.content_length if image.content_length else os.stat(file_path).st_size
 
                 ci = CategoryImage(file_path=file_path, file_name=filename, original_name=image.filename,
                                    file_size=file_size)

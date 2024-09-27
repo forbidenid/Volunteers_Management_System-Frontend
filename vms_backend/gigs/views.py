@@ -7,7 +7,7 @@ from sqlalchemy import desc
 from werkzeug.utils import secure_filename
 
 from categories.models import Category
-from api.factory import db, app
+from vms_api.factory import db, app
 from file_uploads.models import GigImage
 from gigs.models import Gig
 from gigs.serializers import GigListSerializer, GigDetailsSerializer

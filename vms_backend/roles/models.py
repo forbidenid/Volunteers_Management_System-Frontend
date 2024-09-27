@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy import Column
 
-from ecommerce_api.factory import db
+from vms_api.factory import db
 
 
 class Role(db.Model):
