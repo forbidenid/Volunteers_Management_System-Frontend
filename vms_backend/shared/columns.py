@@ -1,4 +1,4 @@
-from api.factory import db
+from vms_api.factory import db
 
 
 class ColIntEnum(db.TypeDecorator):
