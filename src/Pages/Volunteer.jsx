@@ -8,11 +8,11 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import VolunteersTable from "../Components/Volunteers/VolunteersTable";
 import UpdateVolunteerPopup from "../Components/Volunteers/UpdateVolunteerPopup";
+import { useNavigate } from "react-router-dom";
 
 export default function Volunteer() {
-
+  const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
-
 
   const handleOpenPopup = () => {
     setPopupOpen(true);
@@ -22,8 +22,27 @@ export default function Volunteer() {
     setPopupOpen(false);
   };
 
+  const handleBackToHome = () => {
+    navigate("/");
+  };
+
   return (
     <Box className="volunteer">
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: "#e86a33",
+          color: "#fff",
+          marginBottom: "20px",
+          "&:hover": {
+            backgroundColor: "#d75e2d", 
+          },
+        }}
+        onClick={handleBackToHome}
+      >
+        Back to Home
+      </Button>
+
       <Box className="volunteer__user">
         <Box className="volunteer__user--left">
           <figure className="shape">
@@ -72,14 +91,12 @@ export default function Volunteer() {
                 variant="h6"
                 sx={{ color: "#e86a33", marginRight: "2rem" }}
               >
-                {" "}
                 Period:
               </Typography>
               <Typography variant="body2">1 day</Typography>
             </Box>
           </Grid>
           <Grid size={8}>
-            {" "}
             <Box className="volunteer__info--right">
               <PersonIcon />
               <Typography
@@ -106,7 +123,6 @@ export default function Volunteer() {
                 variant="h6"
                 sx={{ color: "#e86a33", marginRight: "2rem" }}
               >
-                {" "}
                 Password:
               </Typography>
               <Typography variant="body2">******</Typography>
